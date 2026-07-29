@@ -62,5 +62,12 @@ fn main() {
     let individual = String::from("Andre");
     drop(individual);
 
+    // Clone
+    // we have to tell Rust manually when we do want the duplicate heap data
+    let person1 = String::from("Rodri");
+    let genius1 = person1.clone();
+
+    println!("This is the {person1}");
+
     // age variable exists here
 } // age variable foes out of scope
