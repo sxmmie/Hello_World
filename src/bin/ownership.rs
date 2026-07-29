@@ -58,5 +58,9 @@ fn main() {
     let genius = person; // genius is assigned the value of person. A heap allocated String does not impelment the Copy Trait, so this is a move not a Copy.
     println!("My name is {genius}");
 
+    // Drop function
+    let individual = String::from("Andre");
+    drop(individual);
+
     // age variable exists here
 } // age variable foes out of scope
