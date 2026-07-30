@@ -67,7 +67,24 @@ fn main() {
     let person1 = String::from("Rodri");
     let genius1 = person1.clone();
 
-    println!("This is the {person1}");
+    println!("This is the best hold midfielder in the world right now {person1}");
+    println!("{person1} is a {genius1}");
+
+    // References and Borrowing
+    // Another way of creating a duplicate is through a reference. A reference allows the program to use a value without moving ownership.
+    // This is stack data
+    let my_stack_value = 2;
+    let my_integer_value = &my_stack_value;
+    println!("{my_integer_value}"); // returns 2
+
+    // heap data
+    let my_heap_value = String::from("Toyota");
+    let my_heap_reference = &my_heap_value; // my_heap_reference is the owner of this reference
+    println!("{my_heap_reference}");
+
+    // DEREFERENCE Operator
+    let dereferenced = *my_heap_reference;
+    println!("{dereferenced}");
 
     // age variable exists here
 } // age variable foes out of scope
