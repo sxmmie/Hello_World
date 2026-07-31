@@ -83,8 +83,22 @@ fn main() {
     println!("{my_heap_reference}");
 
     // DEREFERENCE Operator
+    // To dereference means to access the data at the memory address that the reference points to. The only a type you can derefrence is a reference
     let dereferenced = *my_heap_reference;
     println!("{dereferenced}");
+
+    // String, &String, str, &str
+    // String literals
+    /*
+     * String - A dyanmic piece of text stored on the heap
+     * &String ("ref String") - A reference to a heap String
+     * str - A hardcorded, read-only piece of text encoded in the binary
+     * &str ("ref str") - A reference to the text in the memory that has loaded the binary file
+     */
+    let ice_cream = "Cookies and Cream";
+    let desert = ice_cream;
+    println!("{}", ice_cream);
+    println!("{}", desert);
 
     // age variable exists here
 } // age variable foes out of scope

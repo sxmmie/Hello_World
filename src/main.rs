@@ -333,39 +333,6 @@ fn main() {
     let year = time;
     println!("The time is {time}. It is the year {year}");
 
-    // Moves - A value can only have one owner at a time but the who that owner is can change(who is responsible for moving that data can change)
-    let mut person = String::from("Andre");
-    println!("My name is {person} '+ Umoh'");
-    let genius = person.clone(); // Rust moves the ownership from person to genius. The clone method tells Rust to clone the data in person to genus making 2 separate data on the heap.
-    println!("My name is {genius}");
-
-    // drop function - eallocates memory on the heap
-    drop(person);
-
-    // Referencing and Borrowing - In rust, a reference is a type of pointer
-    let my_stack_value = 2;
-    let my_interger_reference = &my_stack_value;
-    println!("{my_stack_value}");
-    println!("{}", *my_interger_reference);
-
-    let my_heap_value = String::from("Toyota");
-    let my_heap_reference = &my_heap_value;
-
-    // Derefence operator
-    // To dereference means to access the data at the memory address that the reference points to. The only a type you can derefrence is a reference
-    println!("{}", *my_heap_reference);
-
-    // String literals
-    /*
-     * String - A dyanmic piece of text stored on the heap
-     * &String ("ref String") - A reference to a heap String
-     * str - A hardcorded, read-only piece of text encoded in the binary
-     * &str ("ref str") - A reference to the text in the memory that has loaded the binary file
-     */
-    let ice_cream = "Cookies and Cream";
-    let desert = ice_cream;
-    println!("{ice_cream} {desert}");
-
     // Ownership and Func Params
     let apples = 6; // this impelemnts the copy Trait
     print_value(apples);
