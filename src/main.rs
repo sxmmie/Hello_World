@@ -333,16 +333,6 @@ fn main() {
     let year = time;
     println!("The time is {time}. It is the year {year}");
 
-    // Ownership and Func Params
-    let apples = 6; // this impelemnts the copy Trait
-    print_value(apples);
-    println!("{apples} is still my value");
-
-    // A String does not implement the copy trait
-    let oranges = String::from("Oranges");
-    print_string_value(oranges);
-    // println!("{oranges} is still my value"); // borrow of moved value - oranges value brrrowed here after move
-
     // mutable params
     let burger = String::from("Burger"); // string starts out as burger
     add_frries(burger); // let meal = burger    // We transfer the ownership to meal parameter in the add_fries() func
