@@ -84,8 +84,8 @@ fn main() {
 
     // DEREFERENCE Operator
     // To dereference means to access the data at the memory address that the reference points to. The only a type you can derefrence is a reference
-    let dereferenced = *my_heap_reference;
-    println!("{dereferenced}");
+    // let dereferenced = *my_heap_reference;
+    // println!("{dereferenced}");
 
     // String, &String, str, &str
     // String literals
@@ -99,6 +99,12 @@ fn main() {
     let desert = ice_cream;
     println!("{}", ice_cream);
     println!("{}", desert);
+
+    // The Copy Trait with Reference
+    // A reference is still type in Rust.
+    let soup = "Afang";
+    let lunch = &soup;
+    println!("{soup} {lunch}");
 
     // age variable exists here
 } // age variable foes out of scope
