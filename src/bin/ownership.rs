@@ -101,10 +101,28 @@ fn main() {
     println!("{}", desert);
 
     // The Copy Trait with Reference
-    // A reference is still type in Rust.
+    // A reference is still type in Rust and it implements the Copy Trait.
     let soup = "Afang";
-    let lunch = &soup;
-    println!("{soup} {lunch}");
+    let lunch = &soup; // lunch is a full copy of the reference from the soup variable. lunch and soup both reference the Afanf in binary memory
+    println!("{soup} {lunch}"); // with this, there are 2 owners and no movement of data occurs. They're going to each own a reference.
+
+    // Ownership and Function Parameters
+    // A param is a name in a function that can hold a value
+    let apples = 50;
+    print_my_value(apples); // when this function runs, it will receive a copy of the integer value 60. apples is never going to transfer ownership of the value to the value parameter: value = apples.
+    println!("Apples: {apples}");
+
+    // let pass a string
+    let oranges = String::from("oranges"); // a string does not implement the copy trait
+    print_my_string_value(oranges); // so ownership will move from the oranges variable to the value parameter
 
     // age variable exists here
 } // age variable foes out of scope
+
+fn print_my_value(value: i32) {
+    print!("Your value is {value}");
+}
+
+fn print_my_string_value(value: String) {
+    print!("Your value is {value}\n");
+}
