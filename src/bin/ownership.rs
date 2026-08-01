@@ -116,8 +116,20 @@ fn main() {
     let oranges = String::from("oranges"); // a string does not implement the copy trait
     print_my_string_value(oranges); // so ownership will move from the oranges variable to the value parameter
 
+    // Mutable Parameters
+    // function params are immutable by default.We cannot mutate the value in the function body by default. We need to explicitly declare when we want a param to be mutable
+    let burger = String::from("Burger");
+    add_fries(burger);
+
     // age variable exists here
 } // age variable foes out of scope
+
+// When add_fries runs, burger will no longer be the owner of the string value, it will move to meal
+// When we pass args to a function, we are either copying or moving it
+fn add_fries(mut meal: String) {
+    meal.push_str(" with fries"); // we mutate the string but concatenating " and Fries" to it
+    println!("{meal}");
+}
 
 fn print_my_value(value: i32) {
     print!("Your value is {value}");
