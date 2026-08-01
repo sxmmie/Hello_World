@@ -487,14 +487,6 @@ fn add_frries(mut meal: String) {
     println!("{meal}");
 }
 
-fn print_value(value: i32) {
-    println!("Your value is {value}");
-}
-
-fn print_string_value(value: String) {
-    println!("Your value is {value}");
-}
-
 // Project
 fn color_to_number(color: &str) -> i32 {
     match color {
