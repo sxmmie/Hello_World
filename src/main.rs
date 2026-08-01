@@ -333,10 +333,6 @@ fn main() {
     let year = time;
     println!("The time is {time}. It is the year {year}");
 
-    // mutable params
-    let burger = String::from("Burger"); // string starts out as burger
-    add_frries(burger); // let meal = burger    // We transfer the ownership to meal parameter in the add_fries() func
-
     // Return values I
     let cake = bake_cake();
     println!("I now hvae a {cake} cake");
@@ -479,12 +475,6 @@ fn add_flour(mut meal: String) {
 fn bake_cake() -> String {
     let cake = String::from("Chocoloate Mousse");
     return cake;
-}
-
-// mutable params
-fn add_frries(mut meal: String) {
-    meal.push_str(" and Fries"); // we mutate the string but concatenating " and Fries" to it
-    println!("{meal}");
 }
 
 // Project
