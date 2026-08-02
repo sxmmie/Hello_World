@@ -471,12 +471,6 @@ fn add_flour(mut meal: String) {
 
 // fn add_sugar() {}
 
-// Return values I
-fn bake_cake() -> String {
-    let cake = String::from("Chocoloate Mousse");
-    return cake;
-}
-
 // Project
 fn color_to_number(color: &str) -> i32 {
     match color {

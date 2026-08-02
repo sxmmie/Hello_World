@@ -121,8 +121,31 @@ fn main() {
     let burger = String::from("Burger");
     add_fries(burger);
 
+    // Return Values I
+    // This is moving ownership from a value in the invoked function back to the calling function
+    let new_cake = bake_cake();
+    println!("I now have a {new_cake} cake");
+
+    // Return Values II
+    let current_meal = String::new();
+    add_flour(current_meal);
+
     // age variable exists here
 } // age variable foes out of scope
+
+// Return Values II
+fn add_flour(meal: String) {
+    meal.push_str(" with flour");
+    println!("{meal}");
+}
+
+fn add_sugar() {}
+
+// Return Values I
+fn bake_cake() -> String {
+    let cake = String::from("Chocolate Mousse"); // ownershop moves from the cake variable to the new_cake variable
+    return cake;
+}
 
 // When add_fries runs, burger will no longer be the owner of the string value, it will move to meal
 // When we pass args to a function, we are either copying or moving it
