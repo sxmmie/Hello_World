@@ -129,14 +129,17 @@ fn main() {
     // Return Values II
     let current_meal = String::new();
     add_flour(current_meal);
+    add_sugar();
 
     // age variable exists here
 } // age variable foes out of scope
 
 // Return Values II
-fn add_flour(meal: String) {
-    meal.push_str(" with flour");
+// In other to be able to mutate the string, we need to make it mutable by adding the "mut" keyword to the function parameter
+fn add_flour(mut meal: String) -> String {
+    meal.push_str(" with flour"); // concatenate " with flour" to the meal string
     println!("{meal}");
+    return meal;
 }
 
 fn add_sugar() {}
