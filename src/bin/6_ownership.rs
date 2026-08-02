@@ -131,6 +131,15 @@ fn main() {
     add_flour(current_meal);
     add_sugar();
 
+    // Project
+    let is_concert = true;
+    let is_event = is_concert; // Rust will not move ownership because Bolleans(integrs, floats) implements the Copy Trait. We create a full copy of the value
+    println!("The {is_event} is taking place clsoe to the concert? {is_concert}");
+
+    let sushi = "Salmon";
+    let dinner = sushi; // Rust will move ownership beacuse String type does not implement the Copy Trait
+    println!("Mind having {sushi} {dinner}");
+
     // age variable exists here
 } // age variable foes out of scope
 
