@@ -136,12 +136,22 @@ fn main() {
     let is_event = is_concert; // Rust will not move ownership because Bolleans(integrs, floats) implements the Copy Trait. We create a full copy of the value
     println!("The {is_event} is taking place clsoe to the concert? {is_concert}");
 
-    let sushi = "Salmon";
+    let sushi = String::from("Salmon");
     let dinner = sushi; // Rust will move ownership beacuse String type does not implement the Copy Trait
-    println!("Mind having {sushi} {dinner}");
+    println!("Mind having {dinner}?"); // we can't refer to sushi again - sushi was assigned to dinner
+
+    // clear method modifies a heap String to have no content
+    let fish = eat_meal(dinner);
+    println!("{} is the new owner of the value", fish);
 
     // age variable exists here
 } // age variable foes out of scope
+
+// Project - clear method
+fn eat_meal(mut meal: String) -> String {
+    meal.clear(); // cannot mutate an immutable var meal so we add the mut leywaord to the meal param
+    return meal;
+}
 
 // Return Values II
 // In other to be able to mutate the string, we need to make it mutable by adding the "mut" keyword to the function parameter
