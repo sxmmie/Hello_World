@@ -333,10 +333,6 @@ fn main() {
     let year = time;
     println!("The time is {time}. It is the year {year}");
 
-    // Return values I
-    let cake = bake_cake();
-    println!("I now hvae a {cake} cake");
-
     // Return values II
     let current_meal = String::new();
     add_flour(current_meal);
