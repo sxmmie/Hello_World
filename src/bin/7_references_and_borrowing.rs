@@ -12,11 +12,43 @@ fn main() {
 
     // Mutable reference Restrictions
     // A value in a program can have any number of immutable reference at the same time
-    let car = String::from("Red");
-    let ref3 = &mut car;
-    ref3.push_str(" and Silver");
-    let ref4 = &car;
-    println!("{ref1} and {ref2} and {}", &car);
+    // let car = String::from("Red");
+    // let ref3 = &mut car;
+    // ref3.push_str(" and Silver");
+    // let ref4 = &car;
+    // println!("{ref1} and {ref2} and {}", &car);
+
+    // Ownership with Immutable and Mutable References
+    let coffee = String::from("Mocha");
+    let a = &coffee;
+    let b = a;
+
+    // Dangling references
+    // A dangling reference is a pointer to a memory address that has been deallocated
+    let city = create_city();
+    print!("{city}\n");
+
+    // Ownership with Arrays and Tuples
+    // Rust has collection types such as arrays and tuples
+    let registrations = [true, false, true];
+    let first = registrations[0]; // bool implements the Copy trait
+    println!("{first} and {registrations:?}");
+
+    let languages = [String::from("Rust"), String::from("Golang")];
+    let first_lang = &languages[0]; // ask for the memory address, therefore not taking ownership of the array from languages
+    println!("{first_lang} and {languages:?}");
+
+    // Tuples
+    let logins = (true, false, true);
+    let first_login = logins.0;
+    println!("{first_login} and {logins:?}");
+}
+
+// Dangling references
+// We are returning a reference to that spot in the heap memory that will no longer be holding the String after the function ends
+fn create_city() -> String {
+    let city = String::from("New York");
+    city
 }
 
 // ------ Immutable and Mutable references ----------
