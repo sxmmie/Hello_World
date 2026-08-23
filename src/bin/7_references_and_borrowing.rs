@@ -42,6 +42,38 @@ fn main() {
     let logins = (true, false, true);
     let first_login = logins.0;
     println!("{first_login} and {logins:?}");
+
+    // Project
+    let mut trip = start_trip();
+    visit_lagos(&mut trip);
+    trip.push_str(" and ");
+    visit_abuja(&mut trip);
+    trip.push_str(" and ");
+    visit_portharcout(&mut trip);
+    trip.push('.');
+    show_itinerary(&trip);
+}
+
+// Project
+fn start_trip() -> String {
+    String::from("The plan is...")
+}
+
+// this func is receiving an immutable ref(the addresa) to the string
+fn visit_lagos(trip: &mut String) {
+    trip.push_str("Lagos");
+}
+
+fn visit_abuja(trip: &mut String) {
+    trip.push_str("Abuja");
+}
+
+fn visit_portharcout(trip: &mut String) {
+    trip.push_str("Port Harcourt");
+}
+
+fn show_itinerary(trip: &String) {
+    println!("{trip}")
 }
 
 // Dangling references
