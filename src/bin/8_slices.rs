@@ -40,6 +40,20 @@ fn main() {
     println!("{values:?} {my_slice:?}");
     let my_slice = &values[2..4];
     println!("{my_slice:?}");
+
+    // Deref Coercion with Array Slices
+    let regular_reference = &values;
+    print_length(regular_reference);
+
+    let slice_of_three = &values[..3];
+    print_length(slice_of_three);
+
+    // Mutable Array Slices
+}
+
+// Deref Coercion with Array Slices
+fn print_length(reference: &[i32]) {
+    println!("{}", reference.len());
 }
 
 fn do_hero_stuff(hero_name: &str) {
