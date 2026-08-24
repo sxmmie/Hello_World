@@ -33,6 +33,13 @@ fn main() {
     do_hero_stuff(&my_hero_name);
     let another_hero_name = "CR7";
     do_hero_stuff(&another_hero_name); // passing a String not a &str slice
+
+    // Array Slices
+    let values = [4, 8, 15, 16, 23, 42];
+    let my_slice = &values[0..3];
+    println!("{values:?} {my_slice:?}");
+    let my_slice = &values[2..4];
+    println!("{my_slice:?}");
 }
 
 fn do_hero_stuff(hero_name: &str) {
