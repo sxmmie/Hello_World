@@ -15,4 +15,26 @@ fn main() {
     };
 
     println!("{first_name_hero}");
+
+    // String Slice Length
+    // The length of a string slice refers to a count of it bytes, not its characters
+    let food = "🍕";
+    println!("{}", food.len());
+
+    // let pizza_slice = &food[0..3];
+    // println!("{}", pizza_slice.len())
+
+    let my_name = "Samuel Umoh";
+    let full_name = &my_name[..];
+    println!("{full_name}");
+
+    // String Slices as Function Parameters
+    let my_hero_name = String::from("R9");
+    do_hero_stuff(&my_hero_name);
+    let another_hero_name = "CR7";
+    do_hero_stuff(&another_hero_name); // passing a String not a &str slice
+}
+
+fn do_hero_stuff(hero_name: &str) {
+    println!("{hero_name} saves the day");
 }
