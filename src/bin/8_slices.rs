@@ -7,4 +7,12 @@ fn main() {
 
     let last_name = &action_hero[7..21];
     println!("{last_name}");
+
+    // String Slices and String Literal
+    let first_name_hero = {
+        let string_lit = "Arnold Schwarzenegger";
+        &string_lit[0..6]
+    };
+
+    println!("{first_name_hero}");
 }
