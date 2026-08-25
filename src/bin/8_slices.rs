@@ -49,6 +49,13 @@ fn main() {
     print_length(slice_of_three);
 
     // Mutable Array Slices
+    let mut my_array = [10, 15, 20, 25, 30];
+    let my_num_slice = &mut my_array[2..4]; // a mutable ref to a an array(a portion of the whole)
+    println!("My slice {:?}", my_num_slice);
+
+    my_num_slice[0] = 100; // modifies the original values of the array
+    println!("My slice {:?}", my_num_slice);
+    print!("My array {:?}", my_array);
 }
 
 // Deref Coercion with Array Slices
