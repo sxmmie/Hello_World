@@ -55,7 +55,24 @@ fn main() {
 
     my_num_slice[0] = 100; // modifies the original values of the array
     println!("My slice {:?}", my_num_slice);
-    print!("My array {:?}", my_array);
+    print!("My array {:?}\n", my_array);
+
+    // Projects - Solution
+    let cereals = ["Cookie Crisp", "Cinnamon Toast Crunch", "Frosted flakes", "Cocoa Puffs", "Captain Crunch"];
+    let first_two = &cereals[..2];
+    print!("The first two cereals {:?}\n", first_two);
+
+    let mid_three = &cereals[1..4];
+    print!("The mid three creals {:?}\n", mid_three);
+
+    let last_three = &cereals[2..];
+    println!("The last three cereals {:?} \n", last_three);
+
+    // replace the last element(Captain Crunch) in the last_three slice with "Luckey charms". Print the complete cereal array
+    last_three[] = "Lucky Charms";
+
+    // Declare crisp variable. Make it a reference to the Cookie Crisp String (in othe rwords, a &String)
+    let crisp_cookie =
 }
 
 // Deref Coercion with Array Slices
