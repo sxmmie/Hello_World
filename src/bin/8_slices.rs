@@ -58,21 +58,32 @@ fn main() {
     print!("My array {:?}\n", my_array);
 
     // Projects - Solution
-    let cereals = ["Cookie Crisp", "Cinnamon Toast Crunch", "Frosted flakes", "Cocoa Puffs", "Captain Crunch"];
+    let mut cereals = [
+        String::from("Cookie Crisp"),
+        String::from("Cinnamon Toast Crunch"),
+        String::from("Frosted flakes"),
+        String::from("Cocoa Puffs"),
+        String::from("Captain Crunch"),
+    ];
+
     let first_two = &cereals[..2];
     print!("The first two cereals {:?}\n", first_two);
 
     let mid_three = &cereals[1..4];
     print!("The mid three creals {:?}\n", mid_three);
 
-    let last_three = &cereals[2..];
+    let last_three = &mut cereals[2..];
     println!("The last three cereals {:?} \n", last_three);
 
     // replace the last element(Captain Crunch) in the last_three slice with "Luckey charms". Print the complete cereal array
-    last_three[] = "Lucky Charms";
+    last_three[2] = String::from("Lucky Charms");
+    println!("{last_three:?}");
+    println!("{cereals:?}");
 
-    // Declare crisp variable. Make it a reference to the Cookie Crisp String (in othe rwords, a &String)
-    let crisp_cookie =
+    // Declare cookie_crisp variable. Make it a reference to the Cookie Crisp String (in other words, a &String)
+    let cookie_crisp = &cereals[0];
+    let cookie = &cookie_crisp[0..6];
+    println!("{cookie}");
 }
 
 // Deref Coercion with Array Slices
