@@ -84,6 +84,11 @@ fn main() {
     let cookie_crisp = &cereals[0];
     let cookie = &cookie_crisp[0..6];
     println!("{cookie}");
+
+    //
+    let cocoa_puffs = &cereals[3];
+    let puffs = &cocoa_puffs[6..];
+    println!("{puffs}");
 }
 
 // Deref Coercion with Array Slices
