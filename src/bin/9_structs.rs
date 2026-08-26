@@ -1,22 +1,42 @@
+// Named Field Structs
+struct Coffee {
+    name: String,
+    price: f64,
+    is_hot: bool,
+}
+
 fn main() {
     // A struct is a container for related pieces of data.
     // Named Field Structs
     // Tuple-Like Structs
     //  Unit-Like Structs
 
-    // Named Field Structs
-    struct Coffee {
-        name: String,
-        price: f64,
-        is_hot: bool,
-    }
-
     // create an instance of the Coffee struct
-    let mocha = Coffee {
-        name: String::from("mocha"),
+    let mut beverage = Coffee {
+        name: String::from("Mocha"),
         price: 10.95,
         is_hot: true,
     };
 
-    println!("{mocha:?}");
+    // Accessing the values of the struct fields
+    println!("My {} this morning cost {}. It is {} that it was hot", beverage.name, beverage.price, beverage.is_hot);
+
+    // Overwrite the Struct fields - add the "mut" keyword in the instance of the struct - All fields must be mutable
+    beverage.name = String::from("Caramel Macchiato");
+    beverage.price = 6.99;
+    beverage.is_hot = false;
+    println!("My {} this morning cost {}. It is {} that is was hot", beverage.name, beverage.price, beverage.is_hot);
+
+    // Create struct in a Function
+    let coffee = make_coffee(String::from("Latte"), 4.99, true);
+    println!("My {} this morning cost {}. It is {} that it was hot", coffee.name, coffee.price, coffee.is_hot);
+}
+
+// Create struct in a Function
+fn make_coffee(name: String, price: f64, is_hot: bool) -> Coffee {
+    Coffee {
+        name: name,
+        price: price,
+        is_hot: is_hot,
+    }
 }
