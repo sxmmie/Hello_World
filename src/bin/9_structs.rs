@@ -28,8 +28,18 @@ fn main() {
     println!("My {} this morning cost {}. It is {} that is was hot", beverage.name, beverage.price, beverage.is_hot);
 
     // Create struct in a Function
-    let coffee = make_coffee(String::from("Latte"), 4.99, true);
+    let name = String::from("Latte");
+    let coffee = make_coffee(name, 4.99, true);
     println!("My {} this morning cost {}. It is {} that it was hot", coffee.name, coffee.price, coffee.is_hot);
+
+    // Struct Update Syntax
+    let caramel_macchiato = Coffee {
+        // name: String::from("Caramel Macchiato"),
+        name: coffee.name.clone(), // clone creates a duplicate of the data on the heap
+        ..coffee
+    };
+
+    println!("{}", caramel_macchiato.name);
 }
 
 // Create struct in a Function
