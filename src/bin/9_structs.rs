@@ -6,6 +6,7 @@ struct Coffee {
     is_hot: bool,
 }
 
+#[derive(Debug)]
 struct TaylorSwiftSong {
     title: String,
     release_year: u32,
@@ -14,18 +15,35 @@ struct TaylorSwiftSong {
 
 // methods of TaylorSwiftSong struct
 impl TaylorSwiftSong {
+    // immutable struct value (self parameter takes ownership)
     fn display_song_info(self) {
-        // immutable struct value (self parameter takes ownership)
-        // Mutable struct value (self parameter takes ownership, has permission to mutate)
-        // Immutable reference to the struct instance (no ownership moved)
-        // Mutable reference to the struct instance (no ownership moved, have permission to mutate)
         println!("Title: {}", self.title);
         println!("Release Year: {}", self.release_year);
         println!("Duration: {} seconds", self.duration_secs);
     }
+
+    // Mutable struct value (self parameter takes ownership, has permission to mutate)
+    fn double_lenth(mut self) {
+        self.duration_secs = self.duration_secs * 2;
+        println!("{:#?}", self)
+    }
+
+    // Immutable reference to the struct instance (no ownership moved)
+    // Mutable reference to the struct instance (no ownership moved, have permission to mutate)
 }
 
 fn main() {
+    // Defining Struct Methods
+    let song = TaylorSwiftSong {
+        title: String::from("Blank Space"),
+        release_year: 2015,
+        duration_secs: 231,
+    };
+
+    song.display_song_info();
+
+    // song.double_lenth();
+
     // A struct is a container for related pieces of data.
     // Named Field Structs
     // Tuple-Like Structs
@@ -66,15 +84,6 @@ fn main() {
     drink_coffee(&mut mocha);
 
     println!("{}, {}", mocha.name, mocha.price);
-
-    // Defining Struct Methods
-    let song = TaylorSwiftSong {
-        title: String::from("Blank Space"),
-        release_year: 2015,
-        duration_secs: 231,
-    };
-
-    song.display_song_info();
 }
 
 // Passing a Struct in a function as an argument
