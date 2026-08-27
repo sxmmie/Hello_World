@@ -1,8 +1,28 @@
+#[derive(Debug)]
 // Named Field Structs
 struct Coffee {
     name: String,
     price: f64,
     is_hot: bool,
+}
+
+struct TaylorSwiftSong {
+    title: String,
+    release_year: u32,
+    duration_secs: u32,
+}
+
+// methods of TaylorSwiftSong struct
+impl TaylorSwiftSong {
+    fn display_song_info(self) {
+        // immutable struct value (self parameter takes ownership)
+        // Mutable struct value (self parameter takes ownership, has permission to mutate)
+        // Immutable reference to the struct instance (no ownership moved)
+        // Mutable reference to the struct instance (no ownership moved, have permission to mutate)
+        println!("Title: {}", self.title);
+        println!("Release Year: {}", self.release_year);
+        println!("Duration: {} seconds", self.duration_secs);
+    }
 }
 
 fn main() {
@@ -46,6 +66,15 @@ fn main() {
     drink_coffee(&mut mocha);
 
     println!("{}, {}", mocha.name, mocha.price);
+
+    // Defining Struct Methods
+    let song = TaylorSwiftSong {
+        title: String::from("Blank Space"),
+        release_year: 2015,
+        duration_secs: 231,
+    };
+
+    song.display_song_info();
 }
 
 // Passing a Struct in a function as an argument
