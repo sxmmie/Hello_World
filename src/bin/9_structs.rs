@@ -40,6 +40,19 @@ fn main() {
     };
 
     println!("{}", caramel_macchiato.name);
+
+    // Passing a Struct in a function as an argument
+    let mut mocha = make_coffee(String::from("mocha"), 4.99, true);
+    drink_coffee(&mut mocha);
+
+    println!("{}, {}", mocha.name, mocha.price);
+}
+
+// Passing a Struct in a function as an argument
+fn drink_coffee(coffee: &mut Coffee) {
+    println!("Drinking my delicious {}", coffee.name);
+    coffee.is_hot = false;
+    coffee.price = 5.99;
 }
 
 // Create struct in a Function
