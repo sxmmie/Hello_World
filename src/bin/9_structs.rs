@@ -23,6 +23,7 @@ impl TaylorSwiftSong {
     }
 
     // Mutable struct value (self parameter takes ownership, has permission to mutate)
+    // sometimes we want to update some (not all) fields in a struct
     fn double_lenth(mut self) {
         self.duration_secs = self.duration_secs * 2;
         println!("{:#?}", self)
@@ -31,6 +32,8 @@ impl TaylorSwiftSong {
     // Immutable reference to the struct instance (no ownership moved)
     // Mutable reference to the struct instance (no ownership moved, have permission to mutate)
 }
+
+// Self Param as immutable and mutable references to struct instances
 
 fn main() {
     // Defining Struct Methods
@@ -47,7 +50,7 @@ fn main() {
     // A struct is a container for related pieces of data.
     // Named Field Structs
     // Tuple-Like Structs
-    //  Unit-Like Structs
+    // Unit-Like Structs
 
     // create an instance of the Coffee struct
     let mut beverage = Coffee {
@@ -84,6 +87,8 @@ fn main() {
     drink_coffee(&mut mocha);
 
     println!("{}, {}", mocha.name, mocha.price);
+
+    // Self Param as Mutable struct instance
 }
 
 // Passing a Struct in a function as an argument
