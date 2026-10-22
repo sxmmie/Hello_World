@@ -88,7 +88,7 @@ fn main() {
 
     println!("{}, {}", mocha.name, mocha.price);
 
-    // Self Param as Mutable struct instance
+    // Self Parameter as Mutable struct instancefmt
 }
 
 // Passing a Struct in a function as an argument
